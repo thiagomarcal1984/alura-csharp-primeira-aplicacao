@@ -29,3 +29,16 @@ Alternativamente, podemos executar o código do `Program.cs` entrando no diretó
 cd PrimeiroProjeto
 dotnet run Program.cs
 ```
+
+## Primeiro programa
+C# é uma linguagem fortemente tipada. Assim, temos que declarar o tipo e o nome da variável.
+
+A convenção de escrita no C# é a camelCase (como no Java).
+
+Vamos reescrever o código de `Program.cs`:
+
+```CSharp
+// Screen Sound
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+Console.WriteLine(mensagemDeBoasVindas);
+```

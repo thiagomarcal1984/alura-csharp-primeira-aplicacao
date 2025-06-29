@@ -113,3 +113,30 @@ void ExibirOpcoesDoMenu()
 ExibirMensagemDeBoasVindas();
 ExibirOpcoesDoMenu();
 ```
+## Variáveis do tipo inteiro
+Mudança no código de `Program.cs`:
+```Csharp
+// Screen Sound
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+
+// Resto do código
+
+void ExibirOpcoesDoMenu()
+{
+    // Resto do código
+
+    Console.Write("\nDigite a sua opção: ");
+    string opcaoEscolhida = Console.ReadLine()!; // A exclamação proibe retorno de nulo na função.
+    int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
+    if (opcaoEscolhidaNumerica == 1)
+    {
+        Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+    }
+}
+
+ExibirMensagemDeBoasVindas();
+ExibirOpcoesDoMenu();
+```
+> Note a exclamação depois de `Console.ReadLine()`: ela serve para parar de destacar o warning na IDE. Ele é chamado de operador de supressão de nulo.
+
+A conversão de variável de string para inteiro é muito simples. Basta usar a função `int.Parse(variavel)`.

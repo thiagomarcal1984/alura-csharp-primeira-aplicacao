@@ -67,3 +67,49 @@ void ExibirMensagemDeBoasVindas()
 
 ExibirMensagemDeBoasVindas();
 ```
+## Variáveis do tipo texto
+Visite o site https://fsymbols.com/ para criar textos com combinações interessantes de caracteres.
+
+O C# permite uma string de múltiplas linhas. Basta prefixar a string com uma arroba (`@`). É o chamado `verbatim literal`.
+```CSharp
+string textoMultiLinha = @"
+    Este
+        é
+            um
+                texto
+                    multi
+                        linha.
+";
+
+Console.WriteLine(textoMultiLinha);
+```
+
+Mudanças em `Program.cs`:
+```CSharp
+// Program.cs
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+
+void ExibirMensagemDeBoasVindas()
+{
+    Console.WriteLine(@"
+░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
+██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝████╗░██║██╔════╝██╔══██╗██║░░░██║████╗░██║██╔══██╗
+╚█████╗░██║░░╚═╝██████╔╝█████╗░░█████╗░░██╔██╗██║╚█████╗░██║░░██║██║░░░██║██╔██╗██║██║░░██║
+░╚═══██╗██║░░██╗██╔══██╗██╔══╝░░██╔══╝░░██║╚████║░╚═══██╗██║░░██║██║░░░██║██║╚████║██║░░██║
+██████╔╝╚█████╔╝██║░░██║███████╗███████╗██║░╚███║██████╔╝╚█████╔╝╚██████╔╝██║░╚███║██████╔╝
+╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░");
+    Console.WriteLine(mensagemDeBoasVindas);
+}
+
+void ExibirOpcoesDoMenu()
+{
+    Console.WriteLine("\nDigite 1 para registrar uma banda");
+    Console.WriteLine("Digite 2 para mostrar todas as bandas");
+    Console.WriteLine("Digite 3 para avaliar uma banda");
+    Console.WriteLine("Digite 4 para exibir a média");
+    Console.WriteLine("Digite -1 para sair");
+}
+
+ExibirMensagemDeBoasVindas();
+ExibirOpcoesDoMenu();
+```

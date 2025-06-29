@@ -42,3 +42,28 @@ Vamos reescrever o código de `Program.cs`:
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
 Console.WriteLine(mensagemDeBoasVindas);
 ```
+# Tipos e funções no C#
+## Isolando o código com funções
+Nomes de função no C# são escritos no padrão PascalCase (diferente do camelCase nos nomes de variáveis locais).
+
+Como declarar funções no C#:
+1. escreva o tipo de retorno da função;
+2. escreva o nome da função;
+3. escreva o corpo da função entre chaves; e
+4. caso a função retorne alguma coisa, use `return` e o objeto que será retornado.
+
+Código de `Program.cs` modificado:
+```CSharp
+// Program.cs
+// Screen Sound
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+
+void ExibirMensagemDeBoasVindas()
+{
+    Console.WriteLine("***************************");
+    Console.WriteLine(mensagemDeBoasVindas);
+    Console.WriteLine("***************************");
+}
+
+ExibirMensagemDeBoasVindas();
+```

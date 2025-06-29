@@ -140,3 +140,64 @@ ExibirOpcoesDoMenu();
 > Note a exclamação depois de `Console.ReadLine()`: ela serve para parar de destacar o warning na IDE. Ele é chamado de operador de supressão de nulo.
 
 A conversão de variável de string para inteiro é muito simples. Basta usar a função `int.Parse(variavel)`.
+
+## Uso de if/else e switch/case
+Sintaxe de switch/case:
+```Csharp
+    switch (inteiro)
+    {
+        case 1: 
+            Console.WriteLine("Um");
+            // Mais linhas de código
+            break;
+        case 2: 
+            Console.WriteLine("Dois");
+            // Mais linhas de código
+            break;
+        default:
+            Console.WriteLine("Saída default");
+    }
+```
+
+Código de `Program.cs` mudado:
+```CSharp
+// Screen Sound
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+
+void ExibirMensagemDeBoasVindas()
+{
+    // Resto do código
+}
+
+void ExibirOpcoesDoMenu()
+{
+    // Resto do código
+    Console.Write("\nDigite a sua opção: ");
+    string opcaoEscolhida = Console.ReadLine()!; // A exclamação proibe retorno de nulo na função.
+    int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
+
+    switch (opcaoEscolhidaNumerica)
+    {
+        case 1:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case 2:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case 3:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case 4:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case -1:
+            Console.WriteLine($"Tchau tchau :)");
+            break;
+        default: Console.WriteLine("Opção inválida");
+            break;
+    }
+}
+
+ExibirMensagemDeBoasVindas();
+ExibirOpcoesDoMenu();
+```

@@ -24,9 +24,26 @@ void ExibirOpcoesDoMenu()
     Console.Write("\nDigite a sua opção: ");
     string opcaoEscolhida = Console.ReadLine()!; // A exclamação proibe retorno de nulo na função.
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
-    if (opcaoEscolhidaNumerica == 1)
+
+    switch (opcaoEscolhidaNumerica)
     {
-        Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+        case 1:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case 2:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case 3:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case 4:
+            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            break;
+        case -1:
+            Console.WriteLine($"Tchau tchau :)");
+            break;
+        default: Console.WriteLine("Opção inválida");
+            break;
     }
 }
 

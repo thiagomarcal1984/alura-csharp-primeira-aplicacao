@@ -351,3 +351,33 @@ foreach (string banda in listaDasBandas)
     Console.WriteLine($"Banda: {banda}");
 }
 ```
+# Dicionários e avaliação de bandas
+## Ajustando exibição do título
+```CSharp
+// Program.cs
+// Resto do código
+void RegistrarBanda()
+{
+    ExibirTituloDaOpcao("Registro das bandas");
+    // Resto do código
+}
+
+void MostrarBandasRegistradas()
+{
+    ExibirTituloDaOpcao("Exibindo todas as bandas registradas");
+    // Resto do código
+}
+
+void ExibirTituloDaOpcao(string titulo)
+{
+    Console.Clear();
+    Console.WriteLine();
+    string asteriscos = string.Empty.PadLeft(titulo.Length, '*');
+    Console.WriteLine(asteriscos);
+    Console.WriteLine($"{titulo}");
+    Console.WriteLine(asteriscos + "\n");
+}
+
+// Resto do código
+```
+> A novidade é a função `PadLeft`, que recebe como parâmetros o comprimento da string resultante e o char que vai preencher a string à esquerda.

@@ -1,6 +1,10 @@
 ﻿// Screen Sound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
-List<string> lista = new List<string>();
+List<string> lista = new List<string>(){
+    "U2",
+    "Beatles",
+    "Calipso"
+};
 
 void ExibirLogo()
 {
@@ -27,6 +31,27 @@ void RegistrarBanda()
     ExibirOpcoesDoMenu();
 }
 
+void MostrarBandasRegistradas()
+{
+    ExibirLogo();
+    Console.WriteLine();
+    Console.WriteLine("************************************");
+    Console.WriteLine("Exibindo todas as bandas registradas");
+    Console.WriteLine("************************************\n");
+    if (lista.Count == 0)
+    {
+        Console.WriteLine("Não há bandas registradas");
+    }
+
+    for (int i = 0; i < lista.Count; i++)
+    {
+        Console.WriteLine(lista[i]);
+    }
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal.");
+    Console.ReadKey();
+    ExibirOpcoesDoMenu();
+}
+
 void ExibirOpcoesDoMenu()
 {
     ExibirLogo();
@@ -46,7 +71,7 @@ void ExibirOpcoesDoMenu()
             RegistrarBanda();
             break;
         case 2:
-            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            MostrarBandasRegistradas();
             break;
         case 3:
             Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");

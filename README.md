@@ -283,3 +283,61 @@ void RegistrarBanda()
 // Resto do código
 ```
 Agora falta exibir o conteúdo da lista.
+
+## Estrutura de repetição for
+```CSharp
+// Program.cs
+// Screen Sound
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+List<string> lista = new List<string>(){
+    "U2",
+    "Beatles",
+    "Calipso"
+};
+
+// Resto do código
+
+void MostrarBandasRegistradas()
+{
+    ExibirLogo();
+    Console.WriteLine();
+    Console.WriteLine("************************************");
+    Console.WriteLine("Exibindo todas as bandas registradas");
+    Console.WriteLine("************************************\n");
+    if (lista.Count == 0)
+    {
+        Console.WriteLine("Não há bandas registradas");
+    }
+
+    for (int i = 0; i < lista.Count; i++)
+    {
+        Console.WriteLine(lista[i]);
+    }
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal.");
+    Console.ReadKey();
+    ExibirOpcoesDoMenu();
+}
+
+void ExibirOpcoesDoMenu()
+{
+    // Resto do código
+    switch (opcaoEscolhidaNumerica)
+    {
+        // Resto do código
+        case 2:
+            MostrarBandasRegistradas();
+            break;
+    // Resto do código
+    }
+}
+// Resto do código
+```
+> Note a inicialização da lista como ela mudou: `new List<string>(){ "El1", "El2", "El3"};`.
+
+Neste exemplo, o loop que estamos usando é o for simples:
+```CSharp
+for (int i = 0; i < lista.Count; i++)
+{
+    Console.WriteLine(lista[i]);
+}
+```

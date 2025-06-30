@@ -264,3 +264,22 @@ ExibirLogo();
 ExibirOpcoesDoMenu();
 ```
 > Foco na interpolação de string com `$"String {variavel}"`: veja o exemplo debaixo da declaração da variável `nomeDaBanda` na função `RegistrarBanda()`.
+
+## Adicionando músicas na lista
+```CSharp
+// Program.cs
+// Resto do código
+List<string> lista = new List<string>();
+
+// Resto do código
+void RegistrarBanda()
+{
+    // Resto do código
+    string nomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
+    lista.Add(nomeDaBanda);
+    // Resto do código
+}
+// Resto do código
+```
+Agora falta exibir o conteúdo da lista.

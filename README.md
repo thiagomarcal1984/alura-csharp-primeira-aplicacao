@@ -227,6 +227,7 @@ do
         Console.WriteLine("Você adivinhou!");
 } while (chute != numeroSecreto);
 ```
+# Listas e loops no C#
 ## Criando a lista de músicas
 Mudanças no código `Program.cs`:
 ```CSharp
@@ -339,5 +340,14 @@ Neste exemplo, o loop que estamos usando é o for simples:
 for (int i = 0; i < lista.Count; i++)
 {
     Console.WriteLine(lista[i]);
+}
+```
+## Foreach para cada música
+O comando `foreach` é mais legível do que o `for` normal. Veja:
+
+```CSharp
+foreach (string banda in listaDasBandas)
+{
+    Console.WriteLine($"Banda: {banda}");
 }
 ```

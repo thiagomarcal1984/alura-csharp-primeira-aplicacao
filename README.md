@@ -474,3 +474,51 @@ void ExibirOpcoesDoMenu()
 }
 // Resto do código
 ```
+# Desafio
+O desafio consiste em exibir a média de notas de uma banda.
+
+```CSharp
+// Program.cs
+// Resto do código
+void ExibirMediaDaBanda()
+{
+    ExibirTituloDaOpcao("Exibir média da banda");
+    Console.Write("Digite o nome da banda cuja média você deseja saber: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBanda))
+    {
+        if (bandasRegistradas[nomeDaBanda].Count == 0)
+        {
+            Console.WriteLine($"\nA banda {nomeDaBanda} não possui notas.");
+        }
+        else
+        {
+            double media = bandasRegistradas[nomeDaBanda].Average();
+            Console.WriteLine($"\nA média da banda {nomeDaBanda} é {media}.");
+        }
+    }
+    else
+    {
+        Console.WriteLine($"\nA banda {nomeDaBanda} não foi encontrada!");
+    }
+
+    Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+    Console.ReadKey();
+    ExibirOpcoesDoMenu();
+}
+
+// Resto do código
+void ExibirOpcoesDoMenu()
+{
+    // Resto do código
+    switch (opcaoEscolhidaNumerica)
+    {
+        // Resto do código
+        case 4:
+            ExibirMediaDaBanda();
+            break;
+        // Resto do código
+    }
+}
+// Resto do código
+```

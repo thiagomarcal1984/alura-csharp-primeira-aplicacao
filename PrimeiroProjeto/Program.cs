@@ -1,8 +1,9 @@
 ﻿// Screen Sound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
 
-void ExibirMensagemDeBoasVindas()
+void ExibirLogo()
 {
+    Console.Clear();
     Console.WriteLine(@"
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
 ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝████╗░██║██╔════╝██╔══██╗██║░░░██║████╗░██║██╔══██╗
@@ -13,8 +14,20 @@ void ExibirMensagemDeBoasVindas()
     Console.WriteLine(mensagemDeBoasVindas);
 }
 
+void RegistrarBanda()
+{
+    ExibirLogo();
+    Console.WriteLine("Registro de bandas");
+    Console.Write("Digite o nome da banda que deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
+    Thread.Sleep(2000); // Espera 2 segundos.
+    ExibirOpcoesDoMenu();
+}
+
 void ExibirOpcoesDoMenu()
 {
+    ExibirLogo();
     Console.WriteLine("\nDigite 1 para registrar uma banda");
     Console.WriteLine("Digite 2 para mostrar todas as bandas");
     Console.WriteLine("Digite 3 para avaliar uma banda");
@@ -28,7 +41,7 @@ void ExibirOpcoesDoMenu()
     switch (opcaoEscolhidaNumerica)
     {
         case 1:
-            Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
+            RegistrarBanda();
             break;
         case 2:
             Console.WriteLine($"Você digitou a opção {opcaoEscolhida}");
@@ -47,5 +60,5 @@ void ExibirOpcoesDoMenu()
     }
 }
 
-ExibirMensagemDeBoasVindas();
+ExibirLogo();
 ExibirOpcoesDoMenu();

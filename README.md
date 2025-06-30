@@ -227,3 +227,40 @@ do
         Console.WriteLine("Você adivinhou!");
 } while (chute != numeroSecreto);
 ```
+## Criando a lista de músicas
+Mudanças no código `Program.cs`:
+```CSharp
+string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
+
+void ExibirLogo()
+{
+    Console.Clear();
+    // Resto do código
+}
+
+void RegistrarBanda()
+{
+    ExibirLogo();
+    Console.WriteLine("Registro de bandas");
+    Console.Write("Digite o nome da banda que deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
+    Thread.Sleep(2000); // Espera 2 segundos.
+    ExibirOpcoesDoMenu();
+}
+
+void ExibirOpcoesDoMenu()
+{
+    ExibirLogo();
+    // Resto do código
+    switch (opcaoEscolhidaNumerica)
+    {
+        case 1:
+            RegistrarBanda();
+        // Resto do código
+    }
+}
+ExibirLogo();
+ExibirOpcoesDoMenu();
+```
+> Foco na interpolação de string com `$"String {variavel}"`: veja o exemplo debaixo da declaração da variável `nomeDaBanda` na função `RegistrarBanda()`.

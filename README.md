@@ -381,3 +381,41 @@ void ExibirTituloDaOpcao(string titulo)
 // Resto do código
 ```
 > A novidade é a função `PadLeft`, que recebe como parâmetros o comprimento da string resultante e o char que vai preencher a string à esquerda.
+
+## Criando o dicionário / Ajustando para o dicionário
+Vamos substituir a lista de bandas por um dicionário cujas chaves são os nomes das bandas e os valores serão listas de notas para cada banda.
+
+```CSharp
+// Program.cs
+// Resto do código
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>
+{
+    { "Linkin Park",    new List<int>{10, 8, 6} },
+    { "Beatles",        new List<int>() },
+};
+// Resto do código
+```
+> Note que é possível instanciar um dicionário sem usar parênteses, mas sim chaves. Cada key-value pair também é acrescentado ao dicionário com chaves.
+
+Vamos substituir o código de operação na lista de bandas por código para operação no dicionário de bandas:
+```CSharp
+// Program.cs
+// Resto do código
+void RegistrarBanda()
+{
+    // Resto do código
+    bandasRegistradas.Add(nomeDaBanda, new List<int>()); // Acréscimo de chave/valor.
+    // Resto do código
+}
+
+void MostrarBandasRegistradas()
+{
+    // Resto do código
+    foreach (string banda in bandasRegistradas.Keys) // Iteramos as chaves, não o dicionário.
+    {
+        Console.WriteLine($"Banda: {banda}");
+    }
+    // Resto do código
+}
+// Resto do código
+```

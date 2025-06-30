@@ -1,9 +1,9 @@
 ﻿// Screen Sound
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
-List<string> listaDasBandas = new List<string>(){
-    "U2",
-    "Beatles",
-    "Calipso"
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>
+{
+    { "Linkin Park",    new List<int>{10, 8, 6} },
+    { "Beatles",        new List<int>() },
 };
 
 void ExibirLogo()
@@ -19,34 +19,6 @@ void ExibirLogo()
     Console.WriteLine(mensagemDeBoasVindas);
 }
 
-void RegistrarBanda()
-{
-    ExibirTituloDaOpcao("Registro das bandas");
-    Console.Write("Digite o nome da banda que deseja registrar: ");
-    string nomeDaBanda = Console.ReadLine()!;
-    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
-    listaDasBandas.Add(nomeDaBanda);
-    Thread.Sleep(2000); // Espera 2 segundos.
-    ExibirOpcoesDoMenu();
-}
-
-void MostrarBandasRegistradas()
-{
-    ExibirTituloDaOpcao("Exibindo todas as bandas registradas");
-    if (listaDasBandas.Count == 0)
-    {
-        Console.WriteLine("Não há bandas registradas");
-    }
-
-    foreach (string banda in listaDasBandas)
-    {
-        Console.WriteLine($"Banda: {banda}");
-    }
-    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal.");
-    Console.ReadKey();
-    ExibirOpcoesDoMenu();
-}
-
 void ExibirTituloDaOpcao(string titulo)
 {
     Console.Clear();
@@ -55,6 +27,34 @@ void ExibirTituloDaOpcao(string titulo)
     Console.WriteLine(asteriscos);
     Console.WriteLine($"{titulo}");
     Console.WriteLine(asteriscos + "\n");
+}
+
+void RegistrarBanda()
+{
+    ExibirTituloDaOpcao("Registro das bandas");
+    Console.Write("Digite o nome da banda que deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso");
+    bandasRegistradas.Add(nomeDaBanda, new List<int>());
+    Thread.Sleep(2000); // Espera 2 segundos.
+    ExibirOpcoesDoMenu();
+}
+
+void MostrarBandasRegistradas()
+{
+    ExibirTituloDaOpcao("Exibindo todas as bandas registradas");
+    if (bandasRegistradas.Count == 0)
+    {
+        Console.WriteLine("Não há bandas registradas");
+    }
+
+    foreach (string banda in bandasRegistradas.Keys)
+    {
+        Console.WriteLine($"Banda: {banda}");
+    }
+    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal.");
+    Console.ReadKey();
+    ExibirOpcoesDoMenu();
 }
 
 void ExibirOpcoesDoMenu()
